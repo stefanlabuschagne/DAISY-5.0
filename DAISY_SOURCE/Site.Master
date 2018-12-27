@@ -1,0 +1,58 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="WebApplication1.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    DAISY 5.0
+                </h1>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" ToolTip="Daisy Home Page" />
+                        <asp:MenuItem NavigateUrl="~/CreateCase.aspx" Text="New Caller" ToolTip="Capture a call" />
+                        <asp:MenuItem NavigateUrl="~/SearchCallers.aspx" Text="Edit Caller" ToolTip="Search for a call" />                        
+                        <asp:MenuItem NavigateUrl="~/WebReportQuery.aspx" Text="Call Report" ToolTip="Query Daisy Database" />
+                        <asp:MenuItem NavigateUrl="~/ViewStats.aspx" Text="Frequency Report" ToolTip="Call Summary Reports" />
+                        <asp:MenuItem NavigateUrl="~/CreateCaseDedicatedLines.aspx" Text="Dedicated Lines" ToolTip="Capture a call from a dedicated line"/>
+
+                        <asp:MenuItem  Selectable="false"  Text="Customize" ToolTip="Customize Content">                        
+                            <asp:MenuItem  Selectable="false"  Text="Counsellors" ToolTip="">
+                                <asp:MenuItem NavigateUrl="~/CreateCounsellor.aspx" Text="Add" ToolTip="Add a Counsellor"/>
+                                <asp:MenuItem NavigateUrl="~/ViewCounsellors.aspx" Text="View" ToolTip="View Active Counsellors" />
+                            </asp:MenuItem>
+
+                            <asp:MenuItem  Selectable="false"  Text="Helplines" ToolTip="">
+<%--                                <asp:MenuItem Enabled="false" NavigateUrl ="~/CreateHelpLine.aspx" Text="Add" ToolTip="Add a Helpline"/>--%>
+                                <asp:MenuItem NavigateUrl="~/ViewHelplines.aspx" Text="View" ToolTip="View Helplines" />
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" ToolTip="Latest Updates in this version"/>
+
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+     Copyright © - South African Depression and Anxiety Group 2018  
+    </div>
+    </form>
+</body>
+</html>
